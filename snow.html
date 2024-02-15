@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>World Snowman - A-Frame & AR.js</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-extras.animation-mixer@3.4.0/dist/aframe-extras.animation-mixer.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+            <img id="sky" src="assets/img/sky.jpg" alt="morning sky">
+
+            <a-asset-item id="snowman" src="assets/models/snowman_-_low_poly/scene.gltf"></a-asset-item>
+            <a-asset-item id="snowscene" src="assets/models/snow_scene/scene.gltf"></a-asset-item>
+        </a-assets>
+
+        <a-sky src="#sky"></a-sky>
+        <a-gltf-model id="world-scene" src="#snowscene" position="-1 -80 -120" rotation="0 0 0"></a-gltf-model>
+        <a-gltf-model id="model-snow" src="#snowman" animation-mixer position="-1 0 -2" rotation="0 -20 0" scale="1 1 1"></a-gltf-model>
+    </a-scene>
+
+    <a-camera>
+        <a-cursor id="cursor"></a-cursor>
+    </a-camera>
+</body>
+</html>
